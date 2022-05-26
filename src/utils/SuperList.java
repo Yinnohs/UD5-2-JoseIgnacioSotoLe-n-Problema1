@@ -1,5 +1,6 @@
 package utils;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -28,11 +29,10 @@ public class SuperList <T> extends ListManager<T>{
     public void showReversedElements() {
         List<T> reversedList = reverseList(this.list);
         printList(reversedList);
-        Collections.reverse(this.list);
     }
 
     private List<T> reverseList (List<T> listToReverse){
-       List<T> newList = listToReverse;
+       List<T> newList = new ArrayList<T>(listToReverse);
        Collections.reverse(newList);
        return newList;
     }
